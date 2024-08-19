@@ -11,7 +11,7 @@ export default function SchedulingLessons({ roomId, date, getCount }) {
   const getScheduledLessons = () => {
     axios
       .get(
-        `http://localhost:8091/api/schedule-room-lessons/getScheduleLessonsDetails/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-lessons/getScheduleLessonsDetails/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -26,7 +26,7 @@ export default function SchedulingLessons({ roomId, date, getCount }) {
   const getUnScheduledLessons = () => {
     axios
       .get(
-        `http://localhost:8091/api/schedule-room-lessons/getUnScheduleLessonsDetails/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-lessons/getUnScheduleLessonsDetails/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -44,7 +44,7 @@ export default function SchedulingLessons({ roomId, date, getCount }) {
   const handleScheduledLessonDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/schedule-room-lessons/deleteScheduleRoomLessons/${id}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-lessons/deleteScheduleRoomLessons/${id}`
       )
       .then((response) => {
         if (response) {
@@ -61,7 +61,7 @@ export default function SchedulingLessons({ roomId, date, getCount }) {
   const handleAddScheduleLesson = (lessonId) => {
     axios
       .post(
-        `http://localhost:8091/api/schedule-room-lessons/addScheduleRoomLessons`,
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-lessons/addScheduleRoomLessons`,
         {
           roomId,
           lessonId,

@@ -14,7 +14,10 @@ export default function AddFamilyDocument({
     formData.append("n", 6);
     formData.append("filename", fileName);
     axios
-      .post(`http://localhost:8091/api/files/upload`, formData)
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/files/upload`,
+        formData
+      )
       .then((response) => {
         if (response.data) {
           alert("Document uploaded...");
@@ -29,13 +32,16 @@ export default function AddFamilyDocument({
     const fileName = Date.now() + document.name;
 
     axios
-      .post(`http://localhost:8091/api/family-documents/createFamilyDocument`, {
-        documentFile: fileName,
-        uploadedBy: "family",
-        checkInCode: familyObj.checkInCode,
-        description,
-        id: 0,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/family-documents/createFamilyDocument`,
+        {
+          documentFile: fileName,
+          uploadedBy: "family",
+          checkInCode: familyObj.checkInCode,
+          description,
+          id: 0,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getAllFamilyDocuments();

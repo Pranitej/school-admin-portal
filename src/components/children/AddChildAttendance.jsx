@@ -19,7 +19,7 @@ export default function AddChildAttendance({
   const getPreviousAttendance = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-attendance/getChildAttendanceBetweenDates/${currentChild.id}/${date}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/child-attendance/getChildAttendanceBetweenDates/${currentChild.id}/${date}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -49,7 +49,7 @@ export default function AddChildAttendance({
   const getChildScheduledRoomId = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-schedules/getChildScheduleByChildIdAndScheduleDate/${currentChild.id}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/getChildScheduleByChildIdAndScheduleDate/${currentChild.id}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -64,7 +64,7 @@ export default function AddChildAttendance({
   const getAuthorizedPickups = () => {
     axios
       .get(
-        `http://localhost:8091/api/authorized-pickups/getAuthorizedPickupsByCheckInCode/${currentChild.checkInCode}`
+        `https://csdemoproject.info/SchoolProject/api/authorized-pickups/getAuthorizedPickupsByCheckInCode/${currentChild.checkInCode}`
       )
       .then((response) => {
         if (response.data) {
@@ -78,7 +78,7 @@ export default function AddChildAttendance({
 
   const getAllRooms = () => {
     axios
-      .get(`http://localhost:8091/api/rooms/getAllRooms`)
+      .get(`https://csdemoproject.info/SchoolProject/api/rooms/getAllRooms`)
       .then((response) => {
         if (response.data) {
           setAllRooms(response.data);
@@ -106,7 +106,7 @@ export default function AddChildAttendance({
 
     axios
       .post(
-        `http://localhost:8091/api/child-attendance/addChildAttendance`,
+        `https://csdemoproject.info/SchoolProject/api/child-attendance/addChildAttendance`,
         data
       )
       .then((response) => {

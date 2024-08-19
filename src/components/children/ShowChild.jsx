@@ -58,10 +58,13 @@ export default function ShowChild({
       formData.append("filename", filename);
 
       try {
-        const response = await fetch("http://localhost:8091/api/files/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          "https://csdemoproject.info/SchoolProject/api/files/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (response.ok) {
         } else {
@@ -81,7 +84,7 @@ export default function ShowChild({
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8091/api/children/getChildrenByCheckInCode/" +
+          "https://csdemoproject.info/SchoolProject/api/children/getChildrenByCheckInCode/" +
             familyObj.checkInCode
         );
         if (response.ok) {
@@ -103,7 +106,10 @@ export default function ShowChild({
 
   const confirmDelete = () => {
     axios
-      .delete("http://localhost:8091/api/children/deleteChild/" + deleteId)
+      .delete(
+        "https://csdemoproject.info/SchoolProject/api/children/deleteChild/" +
+          deleteId
+      )
       .then((response) => {
         if (response.status === 200) {
           setData(data.filter((record) => record.id !== deleteId));
@@ -127,7 +133,10 @@ export default function ShowChild({
     const filename = Date.now() + pic;
     obj.childPic = filename;
     axios
-      .post("http://localhost:8091/api/children/addChild", obj)
+      .post(
+        "https://csdemoproject.info/SchoolProject/api/children/addChild",
+        obj
+      )
       .then((response) => {
         if (response.status === 201) {
           uploadImage(filename);
@@ -170,7 +179,7 @@ export default function ShowChild({
                                   <th colSpan={2}>
                                     <img
                                       className="img-fluid rounded-circle"
-                                      src={`http://localhost:8091/images/childrens/${childData.childPic}`}
+                                      src={`https://csdemoproject.info/SchoolProject/images/childrens/${childData.childPic}`}
                                       style={{ width: "80px", height: "80px" }}
                                       onClick={() =>
                                         handleEditPic(childData.id)

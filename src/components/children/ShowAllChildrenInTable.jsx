@@ -6,7 +6,9 @@ export default function ShowAllChildrenInTable() {
 
   const getAllChildren = () => {
     axios
-      .get(`http://localhost:8091/api/children/getAllChildren`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/children/getAllChildren`
+      )
       .then((response) => {
         if (response.data) {
           setAllChildren(response.data);
@@ -48,7 +50,7 @@ export default function ShowAllChildrenInTable() {
                     <td>
                       <img
                         className="img-fluid rounded-circle"
-                        src={`http://localhost:8091/images/childrens/${row.childPic}`}
+                        src={`https://csdemoproject.info/SchoolProject/images/childrens/${row.childPic}`}
                         style={{ width: "40px", height: "40px" }}
                       />
                     </td>

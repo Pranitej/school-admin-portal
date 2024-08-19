@@ -11,7 +11,7 @@ export default function AddLesson() {
 
   const getAllLessons = () => {
     axios
-      .get(`http://localhost:8091/api/lessons/getAllLessons`)
+      .get(`https://csdemoproject.info/SchoolProject/api/lessons/getAllLessons`)
       .then((response) => {
         if (response.data) {
           setAllLessons(response.data);
@@ -24,7 +24,9 @@ export default function AddLesson() {
 
   const getAllSubjects = () => {
     axios
-      .get(`http://localhost:8091/api/subjects/getAllSubjects`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/subjects/getAllSubjects`
+      )
       .then((response) => {
         if (response.data) {
           setAllSubjects(response.data);
@@ -37,7 +39,7 @@ export default function AddLesson() {
 
   const handleAddLesson = () => {
     axios
-      .post(`http://localhost:8091/api/lessons/addLesson`, {
+      .post(`https://csdemoproject.info/SchoolProject/api/lessons/addLesson`, {
         category: lessonCategory,
         lessonName,
         description: lessonDescription,
@@ -57,7 +59,9 @@ export default function AddLesson() {
 
   const handleLessonDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/lessons/deleteLesson/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/lessons/deleteLesson/${id}`
+      )
       .then((response) => {
         if (response) {
           getAllLessons();

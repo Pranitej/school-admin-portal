@@ -11,7 +11,10 @@ export default function AddChildDocuments({ childId, getAllChildDocuments }) {
     formData.append("n", 8);
     formData.append("filename", fileName);
     axios
-      .post(`http://localhost:8091/api/files/upload`, formData)
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/files/upload`,
+        formData
+      )
       .then((response) => {
         if (response.data) {
           alert("Document uploaded...");
@@ -26,13 +29,16 @@ export default function AddChildDocuments({ childId, getAllChildDocuments }) {
     const fileName = Date.now() + document.name;
 
     axios
-      .post(`http://localhost:8091/api/child-documents/createChildDocument`, {
-        documentFile: fileName,
-        uploadedBy: "family",
-        childId,
-        description,
-        id: 0,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/child-documents/createChildDocument`,
+        {
+          documentFile: fileName,
+          uploadedBy: "family",
+          childId,
+          description,
+          id: 0,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getAllChildDocuments();

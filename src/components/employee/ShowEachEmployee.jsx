@@ -11,7 +11,10 @@ export default function ShowEachEmployee({ currentEmployee }) {
 
   const handleEdit = (id) => {
     axios
-      .put(`http://localhost:8091/api/employees/updateEmployee/${id}`, employee)
+      .put(
+        `https://csdemoproject.info/SchoolProject/api/employees/updateEmployee/${id}`,
+        employee
+      )
       .then((response) => {
         if (!response.data) {
           alert("Something went wrong...");
@@ -36,7 +39,7 @@ export default function ShowEachEmployee({ currentEmployee }) {
   const handleDelete = () => {
     axios
       .delete(
-        `http://localhost:8091/api/employees/deleteEmployee/${currentEmployee.empId}`
+        `https://csdemoproject.info/SchoolProject/api/employees/deleteEmployee/${currentEmployee.empId}`
       )
       .then((response) => response && alert("Employee deleted..."))
       .catch((error) => console.error(error));
@@ -53,7 +56,7 @@ export default function ShowEachEmployee({ currentEmployee }) {
             <div className="col-sm-10 text-center">
               <img
                 className="img-fluid rounded-circle"
-                src={`http://localhost:8091/images/employees/${currentEmployee.pic}`}
+                src={`https://csdemoproject.info/SchoolProject/images/employees/${currentEmployee.pic}`}
                 style={{ width: "100px", height: "100px" }}
               />
             </div>

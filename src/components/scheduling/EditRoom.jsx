@@ -27,7 +27,9 @@ export default function EditRoom({ id, fetchRoomData }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8091/api/rooms/getRoomById/${id}`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/rooms/getRoomById/${id}`
+      )
       .then((response) => {
         if (response.data) {
           const roomData = response.data;
@@ -48,16 +50,19 @@ export default function EditRoom({ id, fetchRoomData }) {
 
   const handleEditRoom = () => {
     axios
-      .put(`http://localhost:8091/api/rooms/updateRoom/${id}`, {
-        roomName: roomName,
-        roomDetails: roomDetails,
-        status: status,
-        roomCapacity: roomCapacity,
-        acceptableCapacity: acceptableCapacity,
-        cribCheckReminders: cribCheckReminders,
-        faceToNameReminders: faceToNameReminders,
-        roomSecurityCheck: roomSecurityCheck,
-      })
+      .put(
+        `https://csdemoproject.info/SchoolProject/api/rooms/updateRoom/${id}`,
+        {
+          roomName: roomName,
+          roomDetails: roomDetails,
+          status: status,
+          roomCapacity: roomCapacity,
+          acceptableCapacity: acceptableCapacity,
+          cribCheckReminders: cribCheckReminders,
+          faceToNameReminders: faceToNameReminders,
+          roomSecurityCheck: roomSecurityCheck,
+        }
+      )
       .then((response) => {
         if (response.data) {
           setRoomName("");
@@ -78,7 +83,9 @@ export default function EditRoom({ id, fetchRoomData }) {
 
   const handleDeleteRoom = () => {
     axios
-      .delete(`http://localhost:8091/api/rooms/deleteRoom/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/rooms/deleteRoom/${id}`
+      )
       .then((response) => {
         if (response) {
           fetchRoomData();

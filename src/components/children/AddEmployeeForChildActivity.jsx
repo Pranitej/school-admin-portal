@@ -99,7 +99,7 @@ export default function AddEmployeeForChildActivity({
                           <div className="col-sm-2">
                             <img
                               className="img-fluid rounded-circle"
-                              src={`http://localhost:8091/images/employees/${item.pic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/employees/${item.pic}`}
                               style={{ width: "30px", height: "30px" }}
                             />
                           </div>
@@ -146,7 +146,7 @@ export default function AddEmployeeForChildActivity({
                           <div className="col-sm-2">
                             <img
                               className="img-fluid rounded-circle"
-                              src={`http://localhost:8091/images/employees/${item.pic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/employees/${item.pic}`}
                               style={{ width: "30px", height: "30px" }}
                             />
                           </div>

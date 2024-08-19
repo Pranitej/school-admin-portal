@@ -36,10 +36,13 @@ export default function AddGuardian({ familyObj, handleAddGuardianCounter }) {
       formData.append("n", 1);
       formData.append("filename", filename);
       try {
-        const response = await fetch("http://localhost:8091/api/files/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          "https://csdemoproject.info/SchoolProject/api/files/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (response.ok) {
         } else {
@@ -56,29 +59,32 @@ export default function AddGuardian({ familyObj, handleAddGuardianCounter }) {
   const addGuardianRecord = (filename) => {
     if (file) {
       axios
-        .post(`http://localhost:8091/api/guardians/saveGuardian`, {
-          firstName,
-          lastName,
-          pic: filename,
-          relationship,
-          gender,
-          primaryPhone,
-          alternatePhone,
-          email,
-          homeAddress,
-          city,
-          state,
-          zip,
-          DL,
-          employer,
-          clearances,
-          billing,
-          activity,
-          messages,
-          documents,
-          checkInCode: familyObj.checkInCode,
-          password: Date.now().toString().slice(-5),
-        })
+        .post(
+          `https://csdemoproject.info/SchoolProject/api/guardians/saveGuardian`,
+          {
+            firstName,
+            lastName,
+            pic: filename,
+            relationship,
+            gender,
+            primaryPhone,
+            alternatePhone,
+            email,
+            homeAddress,
+            city,
+            state,
+            zip,
+            DL,
+            employer,
+            clearances,
+            billing,
+            activity,
+            messages,
+            documents,
+            checkInCode: familyObj.checkInCode,
+            password: Date.now().toString().slice(-5),
+          }
+        )
         .then((response) => {
           if (response.data) {
             resetForm();

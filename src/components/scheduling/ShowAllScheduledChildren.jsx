@@ -7,7 +7,7 @@ export default function ShowAllScheduledChildren({ roomId, date }) {
   const getScheduledChildren = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-schedules/getAllChildSchedulesByRoomIdAndDate/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/getAllChildSchedulesByRoomIdAndDate/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -69,7 +69,7 @@ export default function ShowAllScheduledChildren({ roomId, date }) {
                           {/* <div className="row align-items-center">
                             <div className="col-sm-2">
                               <img
-                                src={`http://localhost:8091/images/childrens/${child.childPic}`}
+                                src={`https://csdemoproject.info/SchoolProject/images/childrens/${child.childPic}`}
                                 alt="children"
                                 width={"50px"}
                                 onError={(e) => {

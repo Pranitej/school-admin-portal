@@ -9,7 +9,9 @@ export default function Classes() {
 
   const getAllClasses = () => {
     axios
-      .get(`http://localhost:8091/api/classnames/getAllClassNames`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/classnames/getAllClassNames`
+      )
       .then((response) => {
         if (response.data) {
           setAllClasses(response.data);
@@ -22,7 +24,10 @@ export default function Classes() {
 
   const handleAddClass = () => {
     axios
-      .post(`http://localhost:8091/api/classnames/addClassName`, { className })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/classnames/addClassName`,
+        { className }
+      )
       .then((response) => {
         if (response.data) {
           setClassName("");
@@ -37,7 +42,7 @@ export default function Classes() {
   const handleSaveButton = (id) => {
     axios
       .put(
-        `http://localhost:8091/api/classnames/updateClassName/${id}`,
+        `https://csdemoproject.info/SchoolProject/api/classnames/updateClassName/${id}`,
         findClassById(id)
       )
       .then((response) => {
@@ -53,7 +58,9 @@ export default function Classes() {
 
   const handleDeleteClass = (id) => {
     axios
-      .delete(`http://localhost:8091/api/classnames/deleteClassName/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/classnames/deleteClassName/${id}`
+      )
       .then((response) => {
         if (response) {
           getAllClasses();

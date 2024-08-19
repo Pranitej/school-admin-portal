@@ -21,7 +21,7 @@ export default function EmergencyContactsReport() {
   const getEmergencyContactsData = () => {
     axios
       .get(
-        `http://localhost:8091/api/children/getChildrenByStatus/status/${status}`
+        `https://csdemoproject.info/SchoolProject/api/children/getChildrenByStatus/status/${status}`
       )
       .then((response) => {
         if (response.data) {

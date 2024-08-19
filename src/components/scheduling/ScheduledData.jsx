@@ -15,7 +15,7 @@ export default function ScheduledData({
   const getScheduledChildren = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -30,7 +30,7 @@ export default function ScheduledData({
   const getScheduledEmployees = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-schedules/getAllEmployeesDTOSchedulesByRoomIdAndDate/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/getAllEmployeesDTOSchedulesByRoomIdAndDate/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -53,7 +53,7 @@ export default function ScheduledData({
   const handleEmployeeDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/employee-schedules/deleteSchedule/${id}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/deleteSchedule/${id}`
       )
       .then((response) => {
         if (response) {
@@ -69,7 +69,7 @@ export default function ScheduledData({
   const handleChildrenDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/child-schedules/deleteChildSchedule/${id}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/deleteChildSchedule/${id}`
       )
       .then((response) => {
         if (response) {
@@ -143,7 +143,7 @@ export default function ScheduledData({
                         <div className="row align-items-center">
                           <div className="col-sm-1">
                             <img
-                              src={`http://localhost:8091/images/employees/${employee.pic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/employees/${employee.pic}`}
                               alt="children"
                               width={"30px"}
                               onError={(e) => {
@@ -203,7 +203,7 @@ export default function ScheduledData({
                         <div className="row align-items-center">
                           <div className="col-sm-1">
                             <img
-                              src={`http://localhost:8091/images/childrens/${child.childPic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/childrens/${child.childPic}`}
                               alt="children"
                               width={"30px"}
                               onError={(e) => {

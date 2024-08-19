@@ -16,7 +16,7 @@ export default function ChildDocuments({ childId }) {
   const getAllChildDocuments = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-documents/getChildDocumentsByChildId/${childId}`
+        `https://csdemoproject.info/SchoolProject/api/child-documents/getChildDocumentsByChildId/${childId}`
       )
       .then((response) => {
         if (response.data) {
@@ -31,7 +31,7 @@ export default function ChildDocuments({ childId }) {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/child-documents/deleteChildDocument/${id}`
+        `https://csdemoproject.info/SchoolProject/api/child-documents/deleteChildDocument/${id}`
       )
       .then((response) => {
         if (response) {
@@ -188,7 +188,7 @@ export default function ChildDocuments({ childId }) {
                                   {getExtension(document.documentFile) ===
                                     "pdf" && (
                                     <a
-                                      href={`http://localhost:8091/images/childDocs/${document.documentFile}`}
+                                      href={`https://csdemoproject.info/SchoolProject/images/childDocs/${document.documentFile}`}
                                       download
                                       className=""
                                     >
@@ -202,7 +202,7 @@ export default function ChildDocuments({ childId }) {
                                   {getExtension(document.documentFile) ===
                                     "docx" && (
                                     <a
-                                      href={`http://localhost:8091/images/childDocs/${document.documentFile}`}
+                                      href={`https://csdemoproject.info/SchoolProject/images/childDocs/${document.documentFile}`}
                                       download
                                       className=""
                                     >

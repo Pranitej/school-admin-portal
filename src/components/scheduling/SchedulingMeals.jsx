@@ -11,7 +11,7 @@ export default function SchedulingMeals({ roomId, date, getCount }) {
   const getScheduledMeals = () => {
     axios
       .get(
-        `http://localhost:8091/api/schedule-room-meals/getScheduleMealDetails/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-meals/getScheduleMealDetails/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -26,7 +26,7 @@ export default function SchedulingMeals({ roomId, date, getCount }) {
   const getUnScheduledMeals = () => {
     axios
       .get(
-        `http://localhost:8091/api/schedule-room-meals/getUnScheduleMealDetails/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-meals/getUnScheduleMealDetails/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -44,7 +44,7 @@ export default function SchedulingMeals({ roomId, date, getCount }) {
   const handleScheduledMealDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/schedule-room-meals/deleteScheduleRoomMeals/${id}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-meals/deleteScheduleRoomMeals/${id}`
       )
       .then((response) => {
         if (response) {
@@ -61,7 +61,7 @@ export default function SchedulingMeals({ roomId, date, getCount }) {
   const handleAddScheduleMeal = (mealId) => {
     axios
       .post(
-        `http://localhost:8091/api/schedule-room-meals/addScheduleRoomMeals`,
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-meals/addScheduleRoomMeals`,
         {
           roomId,
           mealId,

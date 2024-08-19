@@ -28,7 +28,7 @@ export default function ShowAuthorizedPickups({ familyObj, addPickupCounter }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8091/api/authorized-pickups/getAuthorizedPickupsByCheckInCode/" +
+          "https://csdemoproject.info/SchoolProject/api/authorized-pickups/getAuthorizedPickupsByCheckInCode/" +
             familyObj.checkInCode
         );
         if (response.ok) {
@@ -53,7 +53,7 @@ export default function ShowAuthorizedPickups({ familyObj, addPickupCounter }) {
     obj.pic = filename;
     axios
       .post(
-        "http://localhost:8091/api/authorized-pickups/addAuthorizedPickups",
+        "https://csdemoproject.info/SchoolProject/api/authorized-pickups/addAuthorizedPickups",
         obj
       )
       .then((response) => {
@@ -83,10 +83,13 @@ export default function ShowAuthorizedPickups({ familyObj, addPickupCounter }) {
       formData.append("filename", filename);
 
       try {
-        const response = await fetch("http://localhost:8091/api/files/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          "https://csdemoproject.info/SchoolProject/api/files/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (response.ok) {
           //const data = await response.json();
@@ -121,7 +124,7 @@ export default function ShowAuthorizedPickups({ familyObj, addPickupCounter }) {
   const confirmDelete = () => {
     axios
       .delete(
-        "http://localhost:8091/api/authorized-pickups/deleteAuthorizedPickups/" +
+        "https://csdemoproject.info/SchoolProject/api/authorized-pickups/deleteAuthorizedPickups/" +
           deleteId
       )
       .then((response) => {
@@ -169,7 +172,7 @@ export default function ShowAuthorizedPickups({ familyObj, addPickupCounter }) {
                                 <th colSpan={2}>
                                   <img
                                     className="img-fluid rounded-circle"
-                                    src={`http://localhost:8091/images/authpickups/${guardian.pic}`}
+                                    src={`https://csdemoproject.info/SchoolProject/images/authpickups/${guardian.pic}`}
                                     id="sg_file1"
                                     style={{ width: "80px", height: "80px" }}
                                     onClick={() => {

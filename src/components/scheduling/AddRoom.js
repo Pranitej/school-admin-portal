@@ -29,7 +29,7 @@ export default function AddRoom({ handleAddRoom }) {
 
     try {
       const response = await axios.post(
-        "http://localhost:8091/api/rooms/addRoom",
+        "https://csdemoproject.info/SchoolProject/api/rooms/addRoom",
         room
       );
 

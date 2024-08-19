@@ -20,7 +20,7 @@ export default function ChildReservations({ childId, childData }) {
   const getPastReservationsByChildId = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-reservations/findByChildIdAndReservationDateBefore/${childId}/${getCurrentDate()}`
+        `https://csdemoproject.info/SchoolProject/api/child-reservations/findByChildIdAndReservationDateBefore/${childId}/${getCurrentDate()}`
       )
       .then((response) => {
         if (response.data) {
@@ -35,7 +35,7 @@ export default function ChildReservations({ childId, childData }) {
   const getAllCurrentAndFutureReservationsByChildId = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-reservations/findByChildIdAndReservationDateAfter/${childId}/${getCurrentDate()}`
+        `https://csdemoproject.info/SchoolProject/api/child-reservations/findByChildIdAndReservationDateAfter/${childId}/${getCurrentDate()}`
       )
       .then((response) => {
         if (response.data) {
@@ -49,7 +49,9 @@ export default function ChildReservations({ childId, childData }) {
 
   const getAllClasses = () => {
     axios
-      .get(`http://localhost:8091/api/classnames/getAllClassNames`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/classnames/getAllClassNames`
+      )
       .then((response) => {
         if (response.data) {
           setAllClasses(response.data);
@@ -62,7 +64,7 @@ export default function ChildReservations({ childId, childData }) {
 
   const getAllRooms = () => {
     axios
-      .get(`http://localhost:8091/api/rooms/getAllRooms`)
+      .get(`https://csdemoproject.info/SchoolProject/api/rooms/getAllRooms`)
       .then((response) => {
         if (response.data) {
           setAllRooms(response.data);
@@ -76,7 +78,7 @@ export default function ChildReservations({ childId, childData }) {
   const handleAddReservation = () => {
     axios
       .post(
-        `http://localhost:8091/api/child-reservations/addChildReservation`,
+        `https://csdemoproject.info/SchoolProject/api/child-reservations/addChildReservation`,
         {
           childId,
           childName,

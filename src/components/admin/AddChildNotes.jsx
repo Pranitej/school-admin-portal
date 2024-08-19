@@ -9,7 +9,7 @@ export default function AddChildNotes({ childId }) {
     childId &&
       axios
         .get(
-          `http://localhost:8091/api/child-notes/getChildNotesByChildId/${childId}`
+          `https://csdemoproject.info/SchoolProject/api/child-notes/getChildNotesByChildId/${childId}`
         )
         .then((response) => {
           if (response.data) {
@@ -23,11 +23,14 @@ export default function AddChildNotes({ childId }) {
 
   const handleAddNote = () => {
     axios
-      .post("http://localhost:8091/api/child-notes/addChildNotes", {
-        notesId: 0,
-        childId,
-        notes: note,
-      })
+      .post(
+        "https://csdemoproject.info/SchoolProject/api/child-notes/addChildNotes",
+        {
+          notesId: 0,
+          childId,
+          notes: note,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getAllNotes();
@@ -41,7 +44,9 @@ export default function AddChildNotes({ childId }) {
 
   const handleNotesDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/child-notes/deleteChildNotes/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/child-notes/deleteChildNotes/${id}`
+      )
       .then((response) => {
         if (response) {
           getAllNotes();

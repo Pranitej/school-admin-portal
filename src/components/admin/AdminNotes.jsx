@@ -8,7 +8,7 @@ export default function AdminNotes({ childId }) {
   const getAllNotes = () => {
     axios
       .get(
-        `http://localhost:8091/api/admin-notes/getAdminNotesByChildId/${childId}`
+        `https://csdemoproject.info/SchoolProject/api/admin-notes/getAdminNotesByChildId/${childId}`
       )
       .then((response) => {
         if (response.data) {
@@ -22,11 +22,14 @@ export default function AdminNotes({ childId }) {
 
   const handleAddNote = () => {
     axios
-      .post("http://localhost:8091/api/admin-notes/addAdminNotes", {
-        notesId: 0,
-        childId,
-        notes,
-      })
+      .post(
+        "https://csdemoproject.info/SchoolProject/api/admin-notes/addAdminNotes",
+        {
+          notesId: 0,
+          childId,
+          notes,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getAllNotes();
@@ -40,7 +43,9 @@ export default function AdminNotes({ childId }) {
 
   const handleNotesDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/admin-notes/deleteAdminNotes/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/admin-notes/deleteAdminNotes/${id}`
+      )
       .then((response) => {
         if (response) {
           getAllNotes();

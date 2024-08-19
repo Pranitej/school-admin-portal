@@ -8,7 +8,7 @@ export default function EmployeeDayOffs({ currentEmployee }) {
   const getApprovedDayOffs = () => {
     axios
       .get(
-        `http://localhost:8091/api/daysOff/getDaysOffByEmpId/${currentEmployee.empId}`
+        `https://csdemoproject.info/SchoolProject/api/daysOff/getDaysOffByEmpId/${currentEmployee.empId}`
       )
       .then((response) => {
         if (response.data) {
@@ -22,7 +22,9 @@ export default function EmployeeDayOffs({ currentEmployee }) {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/daysOff/deleteDayOff/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/daysOff/deleteDayOff/${id}`
+      )
       .then((response) => {
         if (response) {
           getApprovedDayOffs();

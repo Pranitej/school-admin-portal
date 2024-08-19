@@ -40,7 +40,7 @@ export default function EditGuardian({
     const fetchGuardianData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8091/api/guardians/getGuardianById/${guardianId}`
+          `https://csdemoproject.info/SchoolProject/api/guardians/getGuardianById/${guardianId}`
         );
         setData(response.data);
       } catch (error) {
@@ -54,7 +54,7 @@ export default function EditGuardian({
     console.log(data);
     try {
       await axios.post(
-        "http://localhost:8091/api/guardians/saveGuardian",
+        "https://csdemoproject.info/SchoolProject/api/guardians/saveGuardian",
         data
       );
       handleShowGuardianCounter();

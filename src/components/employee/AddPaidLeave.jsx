@@ -19,18 +19,21 @@ export default function AddPaidLeave({
 
   const handleAddPaidLeave = () => {
     axios
-      .post(`http://localhost:8091/api/paidLeave/createPaidLeave`, {
-        empId: currentEmployee.empId,
-        startDateOff: startDate,
-        endDateOff: endDate,
-        reasonOff: reason,
-        approvedBy,
-        adminNotes,
-        paidLeaveHoursToPay: hoursToPay,
-        paidLeaveDollarsToPay: dollarsToPay,
-        isSubstituteNeeded: substituteNeeded,
-        isSubstituteSecured: substituteSecured,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/paidLeave/createPaidLeave`,
+        {
+          empId: currentEmployee.empId,
+          startDateOff: startDate,
+          endDateOff: endDate,
+          reasonOff: reason,
+          approvedBy,
+          adminNotes,
+          paidLeaveHoursToPay: hoursToPay,
+          paidLeaveDollarsToPay: dollarsToPay,
+          isSubstituteNeeded: substituteNeeded,
+          isSubstituteSecured: substituteSecured,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getApprovedPaidLeaves();

@@ -67,7 +67,10 @@ export default function AddAuthorizedPickups({
       formData.append("filename", filename);
 
       axios
-        .post(`http://localhost:8091/api/files/upload`, formData)
+        .post(
+          `https://csdemoproject.info/SchoolProject/api/files/upload`,
+          formData
+        )
         .then((response) => {
           if (response.data) {
             resetForm();
@@ -114,7 +117,7 @@ export default function AddAuthorizedPickups({
 
       axios
         .post(
-          `http://localhost:8091/api/authorized-pickups/addAuthorizedPickups`,
+          `https://csdemoproject.info/SchoolProject/api/authorized-pickups/addAuthorizedPickups`,
           parent
         )
         .then((response) => {

@@ -9,7 +9,7 @@ export default function AddFamilyNotes({ familyObj }) {
     familyObj &&
       axios
         .get(
-          `http://localhost:8091/api/family-notes/getFamilyNotesByCheckInCode/${familyObj.checkInCode}`
+          `https://csdemoproject.info/SchoolProject/api/family-notes/getFamilyNotesByCheckInCode/${familyObj.checkInCode}`
         )
         .then((response) => {
           if (response.data) {
@@ -23,11 +23,14 @@ export default function AddFamilyNotes({ familyObj }) {
 
   const handleAddNote = () => {
     axios
-      .post("http://localhost:8091/api/family-notes/addFamilyNotes", {
-        notesId: 0,
-        checkInCode: familyObj.checkInCode,
-        notes: note,
-      })
+      .post(
+        "https://csdemoproject.info/SchoolProject/api/family-notes/addFamilyNotes",
+        {
+          notesId: 0,
+          checkInCode: familyObj.checkInCode,
+          notes: note,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getAllNotes();

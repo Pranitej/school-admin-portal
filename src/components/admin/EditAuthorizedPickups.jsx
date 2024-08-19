@@ -45,7 +45,7 @@ export default function EditAuthorizedPickups({
     const fetchAuthorizedData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8091/api/authorized-pickups/getAuthorizedPickupsById/${authorizedPickupId}`
+          `https://csdemoproject.info/SchoolProject/api/authorized-pickups/getAuthorizedPickupsById/${authorizedPickupId}`
         );
         setData(response.data);
       } catch (error) {
@@ -58,7 +58,7 @@ export default function EditAuthorizedPickups({
   const handleSubmit = async () => {
     try {
       await axios.post(
-        "http://localhost:8091/api/authorized-pickups/addAuthorizedPickups",
+        "https://csdemoproject.info/SchoolProject/api/authorized-pickups/addAuthorizedPickups",
         data
       );
       handleShowAuthorizedPickupCounter();

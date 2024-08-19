@@ -21,7 +21,7 @@ export default function EmployeeMessages({ currentEmployee }) {
   const getAllMessages = () => {
     axios
       .get(
-        `http://localhost:8091/api/messages/findByEmployeeIdAndAdminId/${
+        `https://csdemoproject.info/SchoolProject/api/messages/findByEmployeeIdAndAdminId/${
           currentEmployee.empId
         }/${1}`
       )
@@ -50,7 +50,10 @@ export default function EmployeeMessages({ currentEmployee }) {
     formData.append("n", 11);
     formData.append("filename", fileName);
     axios
-      .post(`http://localhost:8091/api/files/upload`, formData)
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/files/upload`,
+        formData
+      )
       .then((response) => {
         if (response.data) {
           setFile(null);
@@ -65,17 +68,20 @@ export default function EmployeeMessages({ currentEmployee }) {
     if (messageText || file) {
       const fileName = file ? Date.now() + file.name : null;
       axios
-        .post(`http://localhost:8091/api/messages/createMessage`, {
-          messageDate: new Date().toISOString().slice(0, 10),
-          messageTime: getCurrentTime(),
-          messageText,
-          childId: null,
-          employeeId: currentEmployee.empId,
-          employeeName: `${currentEmployee.firstName} ${currentEmployee.lastName}`,
-          adminId: 1,
-          messageFrom: "admin",
-          attachmentFile: fileName,
-        })
+        .post(
+          `https://csdemoproject.info/SchoolProject/api/messages/createMessage`,
+          {
+            messageDate: new Date().toISOString().slice(0, 10),
+            messageTime: getCurrentTime(),
+            messageText,
+            childId: null,
+            employeeId: currentEmployee.empId,
+            employeeName: `${currentEmployee.firstName} ${currentEmployee.lastName}`,
+            adminId: 1,
+            messageFrom: "admin",
+            attachmentFile: fileName,
+          }
+        )
         .then((response) => {
           if (response.data) {
             uploadFile(fileName);
@@ -93,7 +99,9 @@ export default function EmployeeMessages({ currentEmployee }) {
 
   const handleMessageDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/messages/deleteMessage/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/messages/deleteMessage/${id}`
+      )
       .then((response) => {
         if (response) {
           getAllMessages();
@@ -125,7 +133,7 @@ export default function EmployeeMessages({ currentEmployee }) {
           <div className="col-sm-9">
             <img
               className="img-fluid rounded-circle mt-0"
-              src={`http://localhost:8091/images/employees/${currentEmployee.pic}`}
+              src={`https://csdemoproject.info/SchoolProject/images/employees/${currentEmployee.pic}`}
               style={{ width: "30px", height: "30px", display: "inline" }}
             />
             <label className="ml-1 mb-0">
@@ -184,7 +192,7 @@ export default function EmployeeMessages({ currentEmployee }) {
                             {item.attachmentFile && (
                               <div className="mt-2">
                                 <a
-                                  href={`http://localhost:8091/images/employeeMessageAttachments/${item.attachmentFile}`}
+                                  href={`https://csdemoproject.info/SchoolProject/images/employeeMessageAttachments/${item.attachmentFile}`}
                                   target="_blank"
                                   download
                                   className="small card p-2"
@@ -226,7 +234,7 @@ export default function EmployeeMessages({ currentEmployee }) {
                             {item.attachmentFile && (
                               <div className="mt-2">
                                 <a
-                                  href={`http://localhost:8091/images/childMessageAttachments/${item.attachmentFile}`}
+                                  href={`https://csdemoproject.info/SchoolProject/images/childMessageAttachments/${item.attachmentFile}`}
                                   target="_blank"
                                   download
                                   className="small card p-2"

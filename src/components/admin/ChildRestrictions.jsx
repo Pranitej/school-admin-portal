@@ -21,7 +21,7 @@ export default function ChildRestrictions({ childId }) {
   const getAllDietaryRestrictionsByChildId = () => {
     axios
       .get(
-        `http://localhost:8091/api/dietary-restrictions/getAllDietaryRestrictionsByChildId/${childId}`
+        `https://csdemoproject.info/SchoolProject/api/dietary-restrictions/getAllDietaryRestrictionsByChildId/${childId}`
       )
       .then((response) => {
         if (response.data) {
@@ -36,7 +36,7 @@ export default function ChildRestrictions({ childId }) {
   const getAllChildMedicalConditionsByChildId = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-medical-conditions/getAllChildMedicalConditionsByChildId/${childId}`
+        `https://csdemoproject.info/SchoolProject/api/child-medical-conditions/getAllChildMedicalConditionsByChildId/${childId}`
       )
       .then((response) => {
         if (response.data) {
@@ -51,7 +51,7 @@ export default function ChildRestrictions({ childId }) {
   const getAllAllergiesByChildId = () => {
     axios
       .get(
-        `http://localhost:8091/api/allergies/getAllChildAllergiesByChildId/${childId}`
+        `https://csdemoproject.info/SchoolProject/api/allergies/getAllChildAllergiesByChildId/${childId}`
       )
       .then((response) => {
         if (response.data) {
@@ -66,7 +66,7 @@ export default function ChildRestrictions({ childId }) {
   const handleAddDiet = () => {
     axios
       .post(
-        `http://localhost:8091/api/dietary-restrictions/createDietaryRestriction`,
+        `https://csdemoproject.info/SchoolProject/api/dietary-restrictions/createDietaryRestriction`,
         {
           childId,
           dietaryName,
@@ -90,7 +90,7 @@ export default function ChildRestrictions({ childId }) {
   const handleAddMedicalCondition = () => {
     axios
       .post(
-        `http://localhost:8091/api/child-medical-conditions/addMedicalCondition`,
+        `https://csdemoproject.info/SchoolProject/api/child-medical-conditions/addMedicalCondition`,
         {
           childId,
           medicalConditionName,
@@ -113,12 +113,15 @@ export default function ChildRestrictions({ childId }) {
 
   const handleAddAllergy = () => {
     axios
-      .post(`http://localhost:8091/api/allergies/addChildAllergy`, {
-        childId,
-        allergyName,
-        allergyLevel: allergySeverity,
-        allergyTreatment,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/allergies/addChildAllergy`,
+        {
+          childId,
+          allergyName,
+          allergyLevel: allergySeverity,
+          allergyTreatment,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getAllAllergiesByChildId();
@@ -135,7 +138,7 @@ export default function ChildRestrictions({ childId }) {
   const handleDietDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/dietary-restrictions/deleteDietaryRestriction/${id}`
+        `https://csdemoproject.info/SchoolProject/api/dietary-restrictions/deleteDietaryRestriction/${id}`
       )
       .then((response) => {
         if (response) {
@@ -150,7 +153,7 @@ export default function ChildRestrictions({ childId }) {
   const handleMedicalConditionDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/child-medical-conditions/deleteChildMedicalCondition/${id}`
+        `https://csdemoproject.info/SchoolProject/api/child-medical-conditions/deleteChildMedicalCondition/${id}`
       )
       .then((response) => {
         if (response) {
@@ -164,7 +167,9 @@ export default function ChildRestrictions({ childId }) {
 
   const handleAllergyDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/allergies/deleteChildAllergy/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/allergies/deleteChildAllergy/${id}`
+      )
       .then((response) => {
         if (response) {
           getAllAllergiesByChildId();

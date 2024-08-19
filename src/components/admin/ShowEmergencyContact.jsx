@@ -30,7 +30,7 @@ export default function ShowEmergencyContact({ familyObj, addContactCounter }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8091/api/emergency-contacts/getEmergencyContactByCheckInCode/" +
+          "https://csdemoproject.info/SchoolProject/api/emergency-contacts/getEmergencyContactByCheckInCode/" +
             familyObj.checkInCode
         );
         if (response.ok) {
@@ -61,10 +61,13 @@ export default function ShowEmergencyContact({ familyObj, addContactCounter }) {
       formData.append("filename", filename);
 
       try {
-        const response = await fetch("http://localhost:8091/api/files/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          "https://csdemoproject.info/SchoolProject/api/files/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (response.ok) {
           //const data = await response.json();
@@ -99,7 +102,7 @@ export default function ShowEmergencyContact({ familyObj, addContactCounter }) {
     console.log(obj);
     axios
       .post(
-        "http://localhost:8091/api/emergency-contacts/addEmergencyContact",
+        "https://csdemoproject.info/SchoolProject/api/emergency-contacts/addEmergencyContact",
         obj
       )
       .then((response) => {
@@ -121,7 +124,7 @@ export default function ShowEmergencyContact({ familyObj, addContactCounter }) {
   const confirmDelete = () => {
     axios
       .delete(
-        "http://localhost:8091/api/emergency-contacts/deleteEmergencyContact/" +
+        "https://csdemoproject.info/SchoolProject/api/emergency-contacts/deleteEmergencyContact/" +
           deleteId
       )
       .then((response) => {
@@ -170,7 +173,7 @@ export default function ShowEmergencyContact({ familyObj, addContactCounter }) {
                                 <th colSpan={2}>
                                   <img
                                     className="img-fluid rounded-circle"
-                                    src={`http://localhost:8091/images/econtacts/${econtact.pic}`}
+                                    src={`https://csdemoproject.info/SchoolProject/images/econtacts/${econtact.pic}`}
                                     style={{ width: "80px", height: "80px" }}
                                     onClick={() =>
                                       handleEditPic(econtact.emergencyId)

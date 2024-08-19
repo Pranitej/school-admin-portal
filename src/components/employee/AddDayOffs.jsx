@@ -14,18 +14,21 @@ export default function AddDayOffs({ currentEmployee, getApprovedDayOffs }) {
 
   const handleAddDayOff = () => {
     axios
-      .post(`http://localhost:8091/api/daysOff/createDayOff`, {
-        empId: currentEmployee.empId,
-        startDateOff: startDate,
-        endDateOff: endDate,
-        reason,
-        isPaidOff: dayOffAsPaid,
-        totalHours,
-        isSubstituteNeeded: substituteNeeded,
-        isSubstituteSecured: substituteSecured,
-        adminNotes,
-        approvedBy,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/daysOff/createDayOff`,
+        {
+          empId: currentEmployee.empId,
+          startDateOff: startDate,
+          endDateOff: endDate,
+          reason,
+          isPaidOff: dayOffAsPaid,
+          totalHours,
+          isSubstituteNeeded: substituteNeeded,
+          isSubstituteSecured: substituteSecured,
+          adminNotes,
+          approvedBy,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getApprovedDayOffs();

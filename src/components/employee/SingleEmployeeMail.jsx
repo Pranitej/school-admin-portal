@@ -12,7 +12,7 @@ export default function SingleEmployeeMail({ currentEmployee }) {
     setBody("");
 
     axios
-      .post(`http://localhost:8091/sendMail`, {
+      .post(`https://csdemoproject.info/SchoolProject/sendMail`, {
         toMail: email,
         subject,
         body,

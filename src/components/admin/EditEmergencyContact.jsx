@@ -44,7 +44,7 @@ export default function AddEmergencyContact({
     const fetchContactData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8091/api/emergency-contacts/getEmergencyContactById/${contactId}`
+          `https://csdemoproject.info/SchoolProject/api/emergency-contacts/getEmergencyContactById/${contactId}`
         );
         setData(response.data);
       } catch (error) {
@@ -59,7 +59,7 @@ export default function AddEmergencyContact({
 
     try {
       await axios.post(
-        "http://localhost:8091/api/emergency-contacts/addEmergencyContact",
+        "https://csdemoproject.info/SchoolProject/api/emergency-contacts/addEmergencyContact",
         data
       );
       handleShowContactCounter();

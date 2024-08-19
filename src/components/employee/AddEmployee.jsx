@@ -55,7 +55,7 @@ function AddEmployee({ handleAddEmployee }) {
 
       try {
         const response = await axios.post(
-          "http://localhost:8091/api/files/upload",
+          "https://csdemoproject.info/SchoolProject/api/files/upload",
           formData
         );
 
@@ -77,7 +77,7 @@ function AddEmployee({ handleAddEmployee }) {
 
     try {
       const response = await axios.post(
-        "http://localhost:8091/api/employees/addEmployee",
+        "https://csdemoproject.info/SchoolProject/api/employees/addEmployee",
         { ...employee, password: Date.now().slice(-5) }
       );
 

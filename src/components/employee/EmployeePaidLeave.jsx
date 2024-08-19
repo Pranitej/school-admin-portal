@@ -9,7 +9,7 @@ export default function EmployeePaidLeave({ currentEmployee }) {
   const getApprovedPaidLeaves = () => {
     axios
       .get(
-        `http://localhost:8091/api/paidLeave/employee/${currentEmployee.empId}`
+        `https://csdemoproject.info/SchoolProject/api/paidLeave/employee/${currentEmployee.empId}`
       )
       .then((response) => {
         if (response.data) {
@@ -23,7 +23,9 @@ export default function EmployeePaidLeave({ currentEmployee }) {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/paidLeave/deletePaidLeave/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/paidLeave/deletePaidLeave/${id}`
+      )
       .then((response) => {
         if (response) {
           getApprovedPaidLeaves();

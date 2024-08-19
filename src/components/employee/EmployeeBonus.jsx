@@ -9,7 +9,7 @@ export default function EmployeeBonus({ currentEmployee }) {
   const getApprovedBonus = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-bonus/employee/${currentEmployee.empId}`
+        `https://csdemoproject.info/SchoolProject/api/employee-bonus/employee/${currentEmployee.empId}`
       )
       .then((response) => {
         if (response.data) {
@@ -23,7 +23,9 @@ export default function EmployeeBonus({ currentEmployee }) {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/employee-bonus/deleteBonus/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/employee-bonus/deleteBonus/${id}`
+      )
       .then((response) => {
         if (response) {
           getApprovedBonus();

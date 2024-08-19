@@ -6,16 +6,19 @@ export default function AddFamily({ handleAddFamily }) {
 
   const addFamilyRecord = async () => {
     setStatus("Active");
-    await fetch("http://localhost:8091/api/families/addFamily", {
-      method: "POST",
-      body: JSON.stringify({
-        familyName: familyName,
-        status: status,
-      }),
-      headers: {
-        "content-type": "application/json; charset=UTF-8",
-      },
-    })
+    await fetch(
+      "https://csdemoproject.info/SchoolProject/api/families/addFamily",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          familyName: familyName,
+          status: status,
+        }),
+        headers: {
+          "content-type": "application/json; charset=UTF-8",
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data) {

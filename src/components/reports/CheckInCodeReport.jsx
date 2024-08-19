@@ -25,7 +25,7 @@ export default function ChildFamily() {
   const getChildFamilyData = () => {
     axios
       .get(
-        `http://localhost:8091/api/childFamilyReport/children/status/${status}`
+        `https://csdemoproject.info/SchoolProject/api/childFamilyReport/children/status/${status}`
       )
       .then((response) => {
         if (response.data) {

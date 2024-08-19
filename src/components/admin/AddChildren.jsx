@@ -76,7 +76,10 @@ export default function AddChildren({ familyObj, handleAddChildCounter }) {
       formData.append("filename", filename);
 
       axios
-        .post(`http://localhost:8091/api/files/upload`, formData)
+        .post(
+          `https://csdemoproject.info/SchoolProject/api/files/upload`,
+          formData
+        )
         .then((response) => {
           if (!response) {
             alert("Something went wrong...");
@@ -97,7 +100,10 @@ export default function AddChildren({ familyObj, handleAddChildCounter }) {
     try {
       child.checkInCode = familyObj.checkInCode;
       child.familyName = familyObj.familyName;
-      await axios.post("http://localhost:8091/api/children/addChild", child);
+      await axios.post(
+        "https://csdemoproject.info/SchoolProject/api/children/addChild",
+        child
+      );
       handleAddChildCounter();
       uploadImage(childPicName);
       setChild(initialChildState); // Reset the form after submission
@@ -110,7 +116,7 @@ export default function AddChildren({ familyObj, handleAddChildCounter }) {
     const fetchClassNames = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8091/api/classnames/getAllClassNames"
+          "https://csdemoproject.info/SchoolProject/api/classnames/getAllClassNames"
         );
         setClassNames(response.data);
       } catch (error) {

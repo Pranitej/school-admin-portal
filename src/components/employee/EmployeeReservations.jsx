@@ -12,7 +12,7 @@ export default function EmployeeReservations({ currentEmployee }) {
   const getScheduleRecordsByDate = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-schedules/getByEmployeeIdAndScheduleDateBetween/${currentEmployee.empId}/${startDate}/${endDate}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/getByEmployeeIdAndScheduleDateBetween/${currentEmployee.empId}/${startDate}/${endDate}`
       )
       .then((response) => {
         if (response.data) {
@@ -26,7 +26,7 @@ export default function EmployeeReservations({ currentEmployee }) {
 
   const getAllRooms = () => {
     axios
-      .get(`http://localhost:8091/api/rooms/getAllRooms`)
+      .get(`https://csdemoproject.info/SchoolProject/api/rooms/getAllRooms`)
       .then((response) => {
         if (response.data) {
           setAllRooms(response.data);
@@ -48,7 +48,7 @@ export default function EmployeeReservations({ currentEmployee }) {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/employee-schedules/deleteSchedule/${id}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/deleteSchedule/${id}`
       )
       .then((response) => {
         if (response) {

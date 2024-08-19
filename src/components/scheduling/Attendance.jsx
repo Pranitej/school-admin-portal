@@ -17,7 +17,7 @@ export default function Attendance({ date, roomId, allRoomsCount }) {
   const getChildren = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -66,7 +66,7 @@ export default function Attendance({ date, roomId, allRoomsCount }) {
     };
     axios
       .post(
-        `http://localhost:8091/api/child-attendance/addChildAttendance`,
+        `https://csdemoproject.info/SchoolProject/api/child-attendance/addChildAttendance`,
         data
       )
       .then((response) => {
@@ -103,7 +103,7 @@ export default function Attendance({ date, roomId, allRoomsCount }) {
 
     axios
       .post(
-        `http://localhost:8091/api/child-attendance/addChildAttendance`,
+        `https://csdemoproject.info/SchoolProject/api/child-attendance/addChildAttendance`,
         data
       )
       .then((response) => {
@@ -234,7 +234,7 @@ export default function Attendance({ date, roomId, allRoomsCount }) {
                               <div className="row align-items-center">
                                 <div className="col-sm-1">
                                   <img
-                                    src={`http://localhost:8091/images/childrens/${child.childPic}`}
+                                    src={`https://csdemoproject.info/SchoolProject/images/childrens/${child.childPic}`}
                                     alt="children"
                                     width={"40px"}
                                     onError={(e) => {
@@ -322,7 +322,7 @@ export default function Attendance({ date, roomId, allRoomsCount }) {
                                 <div className="row align-items-center">
                                   <div className="col-sm-1">
                                     <img
-                                      src={`http://localhost:8091/images/childrens/${child.childPic}`}
+                                      src={`https://csdemoproject.info/SchoolProject/images/childrens/${child.childPic}`}
                                       alt="children"
                                       width={"40px"}
                                       onError={(e) => {

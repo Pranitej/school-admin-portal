@@ -28,7 +28,9 @@ export default function EmployeesInTable(handleDataUpdate) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8091/api/employees/getAllEmployees")
+      .get(
+        "https://csdemoproject.info/SchoolProject/api/employees/getAllEmployees"
+      )
       .then((response) => {
         setData(response.data);
       })
@@ -53,7 +55,9 @@ export default function EmployeesInTable(handleDataUpdate) {
 
   const getEmployeeData = (id) => {
     axios
-      .get(`http://localhost:8091/api/employees/getEmployeeById/${id}`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/employees/getEmployeeById/${id}`
+      )
       .then((response) =>
         response.data
           ? setEmployee(response.data)
@@ -64,7 +68,10 @@ export default function EmployeesInTable(handleDataUpdate) {
 
   const handleEdit = (id) => {
     axios
-      .put(`http://localhost:8091/api/employees/updateEmployee/${id}`, employee)
+      .put(
+        `https://csdemoproject.info/SchoolProject/api/employees/updateEmployee/${id}`,
+        employee
+      )
       .then((response) =>
         response.data ? setRender(!render) : alert("Something went wrong...")
       )
@@ -75,7 +82,9 @@ export default function EmployeesInTable(handleDataUpdate) {
     const result = true;
     if (result) {
       axios
-        .delete(`http://localhost:8091/api/employees/deleteEmployee/${id}`)
+        .delete(
+          `https://csdemoproject.info/SchoolProject/api/employees/deleteEmployee/${id}`
+        )
         .then((response) => response && setRender(!render))
         .catch((error) => console.error(error));
     }
@@ -132,7 +141,7 @@ export default function EmployeesInTable(handleDataUpdate) {
                   <td>
                     <img
                       className="img-fluid rounded-circle"
-                      src={`http://localhost:8091/images/employees/${row.pic}`}
+                      src={`https://csdemoproject.info/SchoolProject/images/employees/${row.pic}`}
                       style={{ width: "40px", height: "40px" }}
                     />
                   </td>

@@ -12,7 +12,9 @@ export default function ChildActivityFeed({ currentChild }) {
   const [allEmployees, setAllEmployees] = useState(null);
   const getAllEmployees = () => {
     axios
-      .get(`http://localhost:8091/api/employees/getAllEmployees`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/employees/getAllEmployees`
+      )
       .then((response) => {
         if (response.data) {
           setAllEmployees(response.data);
@@ -27,7 +29,7 @@ export default function ChildActivityFeed({ currentChild }) {
   const getChildActivityFeeds = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-activities/findByChildIdAndActivityTypeAndDateOfActivityBetween/${currentChild.id}/${activityFilter}/${startDate}/${endDate}`
+        `https://csdemoproject.info/SchoolProject/api/child-activities/findByChildIdAndActivityTypeAndDateOfActivityBetween/${currentChild.id}/${activityFilter}/${startDate}/${endDate}`
       )
       .then((response) => {
         if (response.data) {
@@ -146,7 +148,7 @@ export default function ChildActivityFeed({ currentChild }) {
                     <div className="col-sm-3">
                       <img
                         className="img-fluid rounded-circle"
-                        src={`http://localhost:8091/images/childrens/${currentChild.childPic}`}
+                        src={`https://csdemoproject.info/SchoolProject/images/childrens/${currentChild.childPic}`}
                         style={{
                           width: "40px",
                           height: "40px",
@@ -163,7 +165,7 @@ export default function ChildActivityFeed({ currentChild }) {
                 <div class="card-body text-center">
                   <img
                     className="img-fluid"
-                    src={`http://localhost:8091/images/childActivities/${item.activityImage}`}
+                    src={`https://csdemoproject.info/SchoolProject/images/childActivities/${item.activityImage}`}
                     style={{ width: "350px", aspectRatio: "5/4" }}
                   />
                   <div className="text-left mt-3">

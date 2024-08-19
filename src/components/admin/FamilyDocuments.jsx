@@ -15,7 +15,7 @@ export default function FamilyDocuments({ familyObj }) {
   const getAllFamilyDocuments = () => {
     axios
       .get(
-        `http://localhost:8091/api/family-documents/getFamilyDocumentsByCheckInCode/${familyObj.checkInCode}`
+        `https://csdemoproject.info/SchoolProject/api/family-documents/getFamilyDocumentsByCheckInCode/${familyObj.checkInCode}`
       )
       .then((response) => {
         if (response.data) {
@@ -28,7 +28,7 @@ export default function FamilyDocuments({ familyObj }) {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/family-documents/deleteFamilyDocument/${id}`
+        `https://csdemoproject.info/SchoolProject/api/family-documents/deleteFamilyDocument/${id}`
       )
       .then((response) => {
         if (response) {
@@ -185,7 +185,7 @@ export default function FamilyDocuments({ familyObj }) {
                                   {getExtension(document.documentFile) ===
                                     "pdf" && (
                                     <a
-                                      href={`http://localhost:8091/images/familydocs/${document.documentFile}`}
+                                      href={`https://csdemoproject.info/SchoolProject/images/familydocs/${document.documentFile}`}
                                       download
                                       className=""
                                     >
@@ -199,7 +199,7 @@ export default function FamilyDocuments({ familyObj }) {
                                   {getExtension(document.documentFile) ===
                                     "docx" && (
                                     <a
-                                      href={`http://localhost:8091/images/familydocs/${document.documentFile}`}
+                                      href={`https://csdemoproject.info/SchoolProject/images/familydocs/${document.documentFile}`}
                                       download
                                       className=""
                                     >

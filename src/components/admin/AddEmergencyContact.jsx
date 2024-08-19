@@ -70,7 +70,7 @@ export default function AddEmergencyContact({
 
       try {
         const response = await axios.post(
-          "http://localhost:8091/api/files/upload",
+          "https://csdemoproject.info/SchoolProject/api/files/upload",
           formData
         );
 
@@ -94,7 +94,7 @@ export default function AddEmergencyContact({
 
     try {
       await axios.post(
-        "http://localhost:8091/api/emergency-contacts/addEmergencyContact",
+        "https://csdemoproject.info/SchoolProject/api/emergency-contacts/addEmergencyContact",
         data
       );
       await uploadImage(data.pic);

@@ -55,7 +55,7 @@ export default function EditChildren({ childId, handleShowChildCounter }) {
   const fetchChildData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8091/api/children/getChildById/${childId}`
+        `https://csdemoproject.info/SchoolProject/api/children/getChildById/${childId}`
       );
       setChild(response.data);
     } catch (error) {
@@ -70,7 +70,7 @@ export default function EditChildren({ childId, handleShowChildCounter }) {
   const handleSubmit = () => {
     console.log(child);
     axios
-      .post(`http://localhost:8091/api/children/addChild`, {
+      .post(`https://csdemoproject.info/SchoolProject/api/children/addChild`, {
         ...child,
       })
       .then((response) => {
@@ -89,7 +89,7 @@ export default function EditChildren({ childId, handleShowChildCounter }) {
     const fetchClassNames = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8091/api/classnames/getAllClassNames"
+          "https://csdemoproject.info/SchoolProject/api/classnames/getAllClassNames"
         );
         setClassNames(response.data);
       } catch (error) {

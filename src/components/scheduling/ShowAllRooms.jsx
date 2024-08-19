@@ -19,7 +19,7 @@ export default function ShowAllRooms() {
 
   const getAllRooms = () => {
     axios
-      .get(`http://localhost:8091/api/rooms/getAllRooms`)
+      .get(`https://csdemoproject.info/SchoolProject/api/rooms/getAllRooms`)
       .then((response) => {
         if (response.data) {
           setAllRooms(response.data);
@@ -34,7 +34,7 @@ export default function ShowAllRooms() {
     date &&
       axios
         .get(
-          `http://localhost:8091/api/rooms/getAllRoomsScheduleCountByDate/${date}`
+          `https://csdemoproject.info/SchoolProject/api/rooms/getAllRoomsScheduleCountByDate/${date}`
         )
         .then((response) => {
           if (response.data) {

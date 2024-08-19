@@ -29,10 +29,13 @@ export default function ShowGuardians({
       formData.append("filename", filename);
 
       try {
-        const response = await fetch("http://localhost:8091/api/files/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          "https://csdemoproject.info/SchoolProject/api/files/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (response.ok) {
           //const data = await response.json();
@@ -76,7 +79,7 @@ export default function ShowGuardians({
       try {
         console.log("checkIcode====" + familyObj.checkInCode);
         const response = await fetch(
-          "http://localhost:8091/api/guardians/getGuardianByCheckInCode/" +
+          "https://csdemoproject.info/SchoolProject/api/guardians/getGuardianByCheckInCode/" +
             familyObj.checkInCode
         );
         if (response.ok) {
@@ -101,7 +104,8 @@ export default function ShowGuardians({
   const confirmDelete = () => {
     axios
       .delete(
-        "http://localhost:8091/api/guardians/deleteGuardianById/" + deleteId
+        "https://csdemoproject.info/SchoolProject/api/guardians/deleteGuardianById/" +
+          deleteId
       )
       .then((response) => {
         if (response.status === 200) {
@@ -137,7 +141,10 @@ export default function ShowGuardians({
     const filename = Date.now() + pic;
     obj.pic = filename;
     axios
-      .post("http://localhost:8091/api/guardians/saveGuardian", obj)
+      .post(
+        "https://csdemoproject.info/SchoolProject/api/guardians/saveGuardian",
+        obj
+      )
       .then((response) => {
         if (response.status === 201) {
           // Remove deleted record from UI
@@ -188,7 +195,7 @@ export default function ShowGuardians({
                                     }
                                     className="img-fluid rounded-circle"
                                     id="sg_file11"
-                                    src={`http://localhost:8091/images/guardians/${guardian.pic}`}
+                                    src={`https://csdemoproject.info/SchoolProject/images/guardians/${guardian.pic}`}
                                     style={{ width: "80px", height: "80px" }}
                                   />
                                   <br></br>

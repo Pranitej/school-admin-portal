@@ -19,7 +19,7 @@ export default function ChildVaccines({ childId }) {
     shot &&
       axios
         .get(
-          `http://localhost:8091/api/childvaccines/child/${childId}/vaccine/${shot}`
+          `https://csdemoproject.info/SchoolProject/api/childvaccines/child/${childId}/vaccine/${shot}`
         )
         .then((response) => {
           if (response.data) {
@@ -34,19 +34,22 @@ export default function ChildVaccines({ childId }) {
 
   const handleUpdateShot = () => {
     axios
-      .post(`http://localhost:8091/api/childvaccines/createChildVaccine`, {
-        shotId: shotId ? shotId : null,
-        childId,
-        vaccineName: shot,
-        totalShots: shotsRequired,
-        shotsReceived,
-        shotDate1: shot1,
-        shotDate2: shot2,
-        shotDate3: shot3,
-        shotDate4: shot4,
-        nextShotDueDate: dueDate,
-        shotNotes,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/childvaccines/createChildVaccine`,
+        {
+          shotId: shotId ? shotId : null,
+          childId,
+          vaccineName: shot,
+          totalShots: shotsRequired,
+          shotsReceived,
+          shotDate1: shot1,
+          shotDate2: shot2,
+          shotDate3: shot3,
+          shotDate4: shot4,
+          nextShotDueDate: dueDate,
+          shotNotes,
+        }
+      )
       .then((response) => {
         if (response.data) {
           alert("Shot Updated...");

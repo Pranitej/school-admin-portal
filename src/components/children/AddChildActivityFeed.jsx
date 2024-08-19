@@ -52,7 +52,10 @@ export default function AddChildActivityFeed({
     formData.append("n", 9);
     formData.append("filename", fileName);
     axios
-      .post(`http://localhost:8091/api/files/upload`, formData)
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/files/upload`,
+        formData
+      )
       .then((response) => {
         if (response.data) {
           setActivityType("");
@@ -107,7 +110,7 @@ export default function AddChildActivityFeed({
 
     axios
       .post(
-        `http://localhost:8091/api/child-activities/createChildActivity`,
+        `https://csdemoproject.info/SchoolProject/api/child-activities/createChildActivity`,
         data
       )
       .then((response) => {
@@ -204,7 +207,7 @@ export default function AddChildActivityFeed({
                         <img
                           id="childPic"
                           className="img-fluid rounded-circle"
-                          src={`http://localhost:8091/images/childrens/${currentChild.childPic}`}
+                          src={`https://csdemoproject.info/SchoolProject/images/childrens/${currentChild.childPic}`}
                           alt="ChildPicture"
                           style={{ width: "40px", height: "40px" }}
                         />

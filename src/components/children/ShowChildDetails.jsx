@@ -8,7 +8,7 @@ export default function ShowChildDetails({ currentChild }) {
   const getCurrentFamilyDetails = () => {
     axios
       .get(
-        `http://localhost:8091/api/families/getFamilyByCheckInCode/${currentChild.checkInCode}`
+        `https://csdemoproject.info/SchoolProject/api/families/getFamilyByCheckInCode/${currentChild.checkInCode}`
       )
       .then((response) => {
         if (response.data) {

@@ -14,7 +14,7 @@ export default function EmployeeDashboard() {
   const getEmployeesByStatus = () => {
     axios
       .get(
-        `http://localhost:8091/api/employees/getAllEmployeesByStatus/${status}`
+        `https://csdemoproject.info/SchoolProject/api/employees/getAllEmployeesByStatus/${status}`
       )
       .then((response) => {
         if (response.data) {

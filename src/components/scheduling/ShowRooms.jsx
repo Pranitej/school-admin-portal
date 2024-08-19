@@ -24,7 +24,7 @@ export default function ShowRooms({
   const fetchRoomData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8091/api/rooms/getAllRoomsByStatus/${status}`
+        `https://csdemoproject.info/SchoolProject/api/rooms/getAllRoomsByStatus/${status}`
       );
       if (response.ok) {
         const result = await response.json();

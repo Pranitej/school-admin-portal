@@ -12,7 +12,9 @@ export default function EmployeeEmails() {
 
   const getAllEmployees = () => {
     axios
-      .get(`http://localhost:8091/api/employees/getAllEmployees`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/employees/getAllEmployees`
+      )
       .then((response) => {
         if (response.data) {
           setAllEmployees(response.data);
@@ -32,7 +34,7 @@ export default function EmployeeEmails() {
     setUnselectedEmployees(allEmployees);
 
     axios
-      .post(`http://localhost:8091/sendMultipleMails`, {
+      .post(`https://csdemoproject.info/SchoolProject/sendMultipleMails`, {
         toMail: employeeEmailsString,
         subject,
         body,

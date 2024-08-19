@@ -15,7 +15,7 @@ export default function SchedulingEmployees({
   const getScheduledEmployees = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-schedules/getAllEmployeesDTOSchedulesByRoomIdAndDate/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/getAllEmployeesDTOSchedulesByRoomIdAndDate/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -30,7 +30,7 @@ export default function SchedulingEmployees({
   const getUnScheduledEmployees = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-schedules/findUnScheduledEmployeesByScheduleDateAndRoomId/${date}/${roomId}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/findUnScheduledEmployeesByScheduleDateAndRoomId/${date}/${roomId}`
       )
       .then((response) => {
         if (response.data) {
@@ -54,13 +54,16 @@ export default function SchedulingEmployees({
     }
 
     axios
-      .post(`http://localhost:8091/api/employee-schedules/addSchedule`, {
-        roomId,
-        employeeId: employee.empId,
-        scheduleDate: date,
-        startTime: employee.startTime,
-        endTime: employee.endTime,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/addSchedule`,
+        {
+          roomId,
+          employeeId: employee.empId,
+          scheduleDate: date,
+          startTime: employee.startTime,
+          endTime: employee.endTime,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getScheduledEmployees();
@@ -77,7 +80,7 @@ export default function SchedulingEmployees({
   const handleScheduledEmployeeDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/employee-schedules/deleteSchedule/${id}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/deleteSchedule/${id}`
       )
       .then((response) => {
         if (response) {
@@ -185,7 +188,7 @@ export default function SchedulingEmployees({
                           <div className="col-sm-1">
                             <img
                               className="img-fluid rounded-circle"
-                              src={`http://localhost:8091/images/employees/${item.pic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/employees/${item.pic}`}
                               style={{ width: "30px", height: "30px" }}
                             />
                           </div>
@@ -242,7 +245,7 @@ export default function SchedulingEmployees({
                           <div className="col-sm-1">
                             <img
                               className="img-fluid rounded-circle"
-                              src={`http://localhost:8091/images/employees/${item.pic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/employees/${item.pic}`}
                               style={{ width: "30px", height: "30px" }}
                             />
                           </div>

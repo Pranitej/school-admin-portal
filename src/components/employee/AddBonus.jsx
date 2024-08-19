@@ -12,14 +12,17 @@ export default function AddBonus({ currentEmployee, getApprovedBonus }) {
 
   const handleAddBonus = () => {
     axios
-      .post(`http://localhost:8091/api/employee-bonus/createBonus`, {
-        employeeId: currentEmployee.empId,
-        bonusDate,
-        bonusReason,
-        adminNotes,
-        bonusHoursToPay,
-        bonusDollarsToPay,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/employee-bonus/createBonus`,
+        {
+          employeeId: currentEmployee.empId,
+          bonusDate,
+          bonusReason,
+          adminNotes,
+          bonusHoursToPay,
+          bonusDollarsToPay,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getApprovedBonus();

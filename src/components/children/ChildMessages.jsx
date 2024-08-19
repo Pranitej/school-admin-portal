@@ -21,7 +21,7 @@ export default function ChildMessages({ currentChild }) {
   const getAllMessages = () => {
     axios
       .get(
-        `http://localhost:8091/api/messages/getMessagesByChildIdAndAdminId/${
+        `https://csdemoproject.info/SchoolProject/api/messages/getMessagesByChildIdAndAdminId/${
           currentChild.id
         }/${1}`
       )
@@ -50,7 +50,10 @@ export default function ChildMessages({ currentChild }) {
     formData.append("n", 10);
     formData.append("filename", fileName);
     axios
-      .post(`http://localhost:8091/api/files/upload`, formData)
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/files/upload`,
+        formData
+      )
       .then((response) => {
         if (response.data) {
           setFile(null);
@@ -65,19 +68,22 @@ export default function ChildMessages({ currentChild }) {
     if (messageText || file) {
       const fileName = file ? Date.now() + file.name : null;
       axios
-        .post(`http://localhost:8091/api/messages/createMessage`, {
-          messageDate: new Date().toISOString().slice(0, 10),
-          messageTime: getCurrentTime(),
-          messageText,
-          childId: currentChild.id,
-          guardianId: null,
-          guardianName: null,
-          employeeId: null,
-          employeeName: null,
-          adminId: 1,
-          messageFrom: "admin",
-          attachmentFile: fileName,
-        })
+        .post(
+          `https://csdemoproject.info/SchoolProject/api/messages/createMessage`,
+          {
+            messageDate: new Date().toISOString().slice(0, 10),
+            messageTime: getCurrentTime(),
+            messageText,
+            childId: currentChild.id,
+            guardianId: null,
+            guardianName: null,
+            employeeId: null,
+            employeeName: null,
+            adminId: 1,
+            messageFrom: "admin",
+            attachmentFile: fileName,
+          }
+        )
         .then((response) => {
           if (response.data) {
             uploadFile(fileName);
@@ -95,7 +101,9 @@ export default function ChildMessages({ currentChild }) {
 
   const handleMessageDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/messages/deleteMessage/${id}`)
+      .delete(
+        `https://csdemoproject.info/SchoolProject/api/messages/deleteMessage/${id}`
+      )
       .then((response) => {
         if (response) {
           getAllMessages();
@@ -127,7 +135,7 @@ export default function ChildMessages({ currentChild }) {
           <div className="col-sm-9">
             <img
               className="img-fluid rounded-circle mt-0"
-              src={`http://localhost:8091/images/childrens/${currentChild.childPic}`}
+              src={`https://csdemoproject.info/SchoolProject/images/childrens/${currentChild.childPic}`}
               style={{ width: "30px", height: "30px", display: "inline" }}
             />
             <label className="ml-1 mb-0">
@@ -186,7 +194,7 @@ export default function ChildMessages({ currentChild }) {
                             {item.attachmentFile && (
                               <div className="mt-2">
                                 <a
-                                  href={`http://localhost:8091/images/childMessageAttachments/${item.attachmentFile}`}
+                                  href={`https://csdemoproject.info/SchoolProject/images/childMessageAttachments/${item.attachmentFile}`}
                                   target="_blank"
                                   download
                                   className="small card p-2"
@@ -228,7 +236,7 @@ export default function ChildMessages({ currentChild }) {
                             {item.attachmentFile && (
                               <div className="mt-2">
                                 <a
-                                  href={`http://localhost:8091/images/childMessageAttachments/${item.attachmentFile}`}
+                                  href={`https://csdemoproject.info/SchoolProject/images/childMessageAttachments/${item.attachmentFile}`}
                                   target="_blank"
                                   download
                                   className="small card p-2"

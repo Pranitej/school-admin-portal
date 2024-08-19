@@ -17,7 +17,7 @@ export default function ShowRoomDetails({ roomObj, handleDataUpdate }) {
   const getScheduledChildren = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomObj.roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomObj.roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -32,7 +32,7 @@ export default function ShowRoomDetails({ roomObj, handleDataUpdate }) {
   const getScheduledEmployees = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-schedules/getAllEmployeesDTOSchedulesByRoomIdAndDate/${roomObj.roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/getAllEmployeesDTOSchedulesByRoomIdAndDate/${roomObj.roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -47,7 +47,7 @@ export default function ShowRoomDetails({ roomObj, handleDataUpdate }) {
   const getScheduledLessons = () => {
     axios
       .get(
-        `http://localhost:8091/api/schedule-room-lessons/getScheduleLessonsDetails/${roomObj.roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-lessons/getScheduleLessonsDetails/${roomObj.roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -62,7 +62,7 @@ export default function ShowRoomDetails({ roomObj, handleDataUpdate }) {
   const getScheduledMeals = () => {
     axios
       .get(
-        `http://localhost:8091/api/schedule-room-meals/getScheduleMealDetails/${roomObj.roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/schedule-room-meals/getScheduleMealDetails/${roomObj.roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -149,7 +149,7 @@ export default function ShowRoomDetails({ roomObj, handleDataUpdate }) {
                             <div className="row align-items-center">
                               <div className="col-sm-2">
                                 <img
-                                  src={`http://localhost:8091/images/employees/${employee.pic}`}
+                                  src={`https://csdemoproject.info/SchoolProject/images/employees/${employee.pic}`}
                                   alt="children"
                                   width={"30px"}
                                   onError={(e) => {
@@ -219,7 +219,7 @@ export default function ShowRoomDetails({ roomObj, handleDataUpdate }) {
                             <div className="row align-items-center">
                               <div className="col-sm-2">
                                 <img
-                                  src={`http://localhost:8091/images/childrens/${item.childPic}`}
+                                  src={`https://csdemoproject.info/SchoolProject/images/childrens/${item.childPic}`}
                                   alt="children"
                                   width={"30px"}
                                   onError={(e) => {

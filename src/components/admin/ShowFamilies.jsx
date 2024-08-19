@@ -13,7 +13,7 @@ export default function ShowFamilies({ handleDataUpdate }) {
   const fetchFamilyData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8091/api/families/getAllFamilies"
+        "https://csdemoproject.info/SchoolProject/api/families/getAllFamilies"
       );
       if (response.ok) {
         const result = await response.json();

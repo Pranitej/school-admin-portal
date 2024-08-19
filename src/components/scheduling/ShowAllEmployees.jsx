@@ -13,7 +13,9 @@ export default function ShowAllEmployees({
 
   const getAllEmployees = () => {
     axios
-      .get(`http://localhost:8091/api/employees/getAllEmployees`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/employees/getAllEmployees`
+      )
       .then((response) => {
         if (response.data) {
           setAllEmployees(response.data);
@@ -69,7 +71,7 @@ export default function ShowAllEmployees({
 
     axios
       .post(
-        "http://localhost:8091/api/employee-schedules/createSchedules/batch",
+        "https://csdemoproject.info/SchoolProject/api/employee-schedules/createSchedules/batch",
         selectedChildrenData
       )
       .then((response) => {
@@ -150,7 +152,7 @@ export default function ShowAllEmployees({
                             <div className="row align-items-center">
                               <div className="col-sm-2">
                                 <img
-                                  src={`http://localhost:8091/images/employees/${child.pic}`}
+                                  src={`https://csdemoproject.info/SchoolProject/images/employees/${child.pic}`}
                                   alt="children"
                                   width={"50px"}
                                   onError={(e) => {
@@ -178,7 +180,7 @@ export default function ShowAllEmployees({
                             <div className="row align-items-center">
                               <div className="col-sm-2">
                                 <img
-                                  src={`http://localhost:8091/images/employees/${child.pic}`}
+                                  src={`https://csdemoproject.info/SchoolProject/images/employees/${child.pic}`}
                                   alt="children"
                                   width={"50px"}
                                   onError={(e) => {

@@ -12,7 +12,7 @@ export default function Attendance({ currentEmployee }) {
   const getAttendanceRecordsByDate = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-attendance/getEmployeeAttendanceBetweenDates/${currentEmployee.empId}/${startDate}/${endDate}`
+        `https://csdemoproject.info/SchoolProject/api/employee-attendance/getEmployeeAttendanceBetweenDates/${currentEmployee.empId}/${startDate}/${endDate}`
       )
       .then((response) => {
         if (response.data) {
@@ -27,7 +27,7 @@ export default function Attendance({ currentEmployee }) {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/employee-attendance/deleteEmployeeAttendance/${id}`
+        `https://csdemoproject.info/SchoolProject/api/employee-attendance/deleteEmployeeAttendance/${id}`
       )
       .then((response) => {
         if (response) {

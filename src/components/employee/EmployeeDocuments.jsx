@@ -28,7 +28,10 @@ export default function EmployeeDocuments({ empId }) {
     formData.append("n", 7);
     formData.append("filename", fileName);
     axios
-      .post(`http://localhost:8091/api/files/upload`, formData)
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/files/upload`,
+        formData
+      )
       .then((response) => {
         if (response.data) {
           alert("Document uploaded...");
@@ -44,7 +47,7 @@ export default function EmployeeDocuments({ empId }) {
 
     axios
       .post(
-        `http://localhost:8091/api/employee-documents/addEmployeeDocument`,
+        `https://csdemoproject.info/SchoolProject/api/employee-documents/addEmployeeDocument`,
         {
           empId,
           documentFile: fileName,
@@ -67,7 +70,7 @@ export default function EmployeeDocuments({ empId }) {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/employee-documents/deleteEmployeeDocument/${id}`
+        `https://csdemoproject.info/SchoolProject/api/employee-documents/deleteEmployeeDocument/${id}`
       )
       .then((response) => {
         if (response.data) {
@@ -153,7 +156,7 @@ export default function EmployeeDocuments({ empId }) {
                               {getExtension(document.documentFile) ===
                                 "pdf" && (
                                 <a
-                                  href={`http://localhost:8091/images/employeedocs/${document.documentFile}`}
+                                  href={`https://csdemoproject.info/SchoolProject/images/employeedocs/${document.documentFile}`}
                                   download
                                   className=""
                                 >
@@ -167,7 +170,7 @@ export default function EmployeeDocuments({ empId }) {
                               {getExtension(document.documentFile) ===
                                 "docx" && (
                                 <a
-                                  href={`http://localhost:8091/images/employeedocs/${document.documentFile}`}
+                                  href={`https://csdemoproject.info/SchoolProject/images/employeedocs/${document.documentFile}`}
                                   download
                                   className=""
                                 >

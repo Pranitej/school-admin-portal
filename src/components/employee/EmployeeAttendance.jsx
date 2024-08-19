@@ -8,7 +8,7 @@ export default function EmployeeAttendance() {
   const getAllEmployees = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-schedules/getEmployeesByScheduleDate/${date}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/getEmployeesByScheduleDate/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -54,7 +54,7 @@ export default function EmployeeAttendance() {
 
     axios
       .post(
-        `http://localhost:8091/api/employee-attendance/addEmployeeAttendance`,
+        `https://csdemoproject.info/SchoolProject/api/employee-attendance/addEmployeeAttendance`,
         data
       )
       .then((response) => {
@@ -97,7 +97,7 @@ export default function EmployeeAttendance() {
 
     axios
       .post(
-        `http://localhost:8091/api/employee-attendance/addEmployeeAttendance`,
+        `https://csdemoproject.info/SchoolProject/api/employee-attendance/addEmployeeAttendance`,
         data
       )
       .then((response) => {
@@ -204,7 +204,7 @@ export default function EmployeeAttendance() {
                             <div className="row align-items-center">
                               <div className="col-sm-2 pl-4">
                                 <img
-                                  src={`http://localhost:8091/images/employees/${employee.pic}`}
+                                  src={`https://csdemoproject.info/SchoolProject/images/employees/${employee.pic}`}
                                   alt="employee"
                                   width={"40px"}
                                   onError={(e) => {
@@ -276,7 +276,7 @@ export default function EmployeeAttendance() {
                               <div className="row align-items-center">
                                 <div className="col-sm-2 pl-4">
                                   <img
-                                    src={`http://localhost:8091/images/employees/${employee.pic}`}
+                                    src={`https://csdemoproject.info/SchoolProject/images/employees/${employee.pic}`}
                                     alt="employee"
                                     width={"40px"}
                                     onError={(e) => {

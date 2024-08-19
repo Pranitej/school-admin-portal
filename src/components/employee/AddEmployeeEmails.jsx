@@ -75,7 +75,7 @@ export default function AddEmployeeEmails({
                     <div className="row p-2">
                       <div className="col-sm-2">
                         <img
-                          src={`http://localhost:8091/images/employees/${item.pic}`}
+                          src={`https://csdemoproject.info/SchoolProject/images/employees/${item.pic}`}
                           width={"30px"}
                         />
                       </div>
@@ -106,7 +106,7 @@ export default function AddEmployeeEmails({
                     <div className="row p-2">
                       <div className="col-sm-2">
                         <img
-                          src={`http://localhost:8091/images/employees/${item.pic}`}
+                          src={`https://csdemoproject.info/SchoolProject/images/employees/${item.pic}`}
                           width={"30px"}
                         />
                       </div>

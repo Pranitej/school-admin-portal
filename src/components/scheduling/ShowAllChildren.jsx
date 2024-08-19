@@ -15,7 +15,7 @@ export default function ShowAllChildren({
     const getAllChildren = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8091/api/children/getAllChildren"
+          "https://csdemoproject.info/SchoolProject/api/children/getAllChildren"
         );
         if (response.data) {
           setAllChildren(response.data);
@@ -49,7 +49,7 @@ export default function ShowAllChildren({
 
     axios
       .post(
-        "http://localhost:8091/api/child-schedules/createSchedules/batch",
+        "https://csdemoproject.info/SchoolProject/api/child-schedules/createSchedules/batch",
         selectedChildrenData
       )
       .then((response) => {
@@ -143,7 +143,7 @@ export default function ShowAllChildren({
                         <div className="row align-items-center">
                           <div className="col-sm-2">
                             <img
-                              src={`http://localhost:8091/images/childrens/${child.childPic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/childrens/${child.childPic}`}
                               alt="children"
                               width={"50px"}
                               onError={(e) => {
@@ -170,7 +170,7 @@ export default function ShowAllChildren({
                         <div className="row align-items-center">
                           <div className="col-sm-2">
                             <img
-                              src={`http://localhost:8091/images/childrens/${child.childPic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/childrens/${child.childPic}`}
                               alt="children"
                               width={"50px"}
                               onError={(e) => {

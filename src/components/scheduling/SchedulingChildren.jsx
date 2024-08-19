@@ -14,7 +14,7 @@ export default function SchedulingChildren({
   const getScheduledChildren = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/getChildRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -29,7 +29,7 @@ export default function SchedulingChildren({
   const getUnScheduledChildren = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-schedules/getUnScheduleChildrensByScheduleDateAndRoomId/${date}/${roomId}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/getUnScheduleChildrensByScheduleDateAndRoomId/${date}/${roomId}`
       )
       .then((response) => {
         if (response.data) {
@@ -43,11 +43,14 @@ export default function SchedulingChildren({
 
   const handleAddChildSchedule = (childId) => {
     axios
-      .post(`http://localhost:8091/api/child-schedules/addChildSchedule`, {
-        roomId,
-        childId,
-        scheduleDate: date,
-      })
+      .post(
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/addChildSchedule`,
+        {
+          roomId,
+          childId,
+          scheduleDate: date,
+        }
+      )
       .then((response) => {
         if (response.data) {
           getScheduledChildren();
@@ -64,7 +67,7 @@ export default function SchedulingChildren({
   const handleScheduledChildDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/child-schedules/deleteChildSchedule/${id}`
+        `https://csdemoproject.info/SchoolProject/api/child-schedules/deleteChildSchedule/${id}`
       )
       .then((response) => {
         if (response) {
@@ -148,7 +151,7 @@ export default function SchedulingChildren({
                           <div className="col-sm-2">
                             <img
                               className="img-fluid rounded-circle"
-                              src={`http://localhost:8091/images/childrens/${item.childPic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/childrens/${item.childPic}`}
                               style={{ width: "30px", height: "30px" }}
                             />
                           </div>
@@ -195,7 +198,7 @@ export default function SchedulingChildren({
                           <div className="col-sm-2">
                             <img
                               className="img-fluid rounded-circle"
-                              src={`http://localhost:8091/images/childrens/${item.childPic}`}
+                              src={`https://csdemoproject.info/SchoolProject/images/childrens/${item.childPic}`}
                               style={{ width: "30px", height: "30px" }}
                             />
                           </div>

@@ -18,7 +18,7 @@ export default function AddEmployeeAttendance({
   const getPreviousAttendance = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-attendance/getEmployeeAttendanceBetweenDates/${currentEmployee.empId}/${date}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/employee-attendance/getEmployeeAttendanceBetweenDates/${currentEmployee.empId}/${date}/${date}`
       )
       .then((response) => {
         if (response.data && response.data.length === 0) {
@@ -40,7 +40,7 @@ export default function AddEmployeeAttendance({
   const handleAddEmployeeAttendance = () => {
     axios
       .post(
-        `http://localhost:8091/api/employee-attendance/addEmployeeAttendance`,
+        `https://csdemoproject.info/SchoolProject/api/employee-attendance/addEmployeeAttendance`,
         {
           attendanceId: previousAttendance
             ? previousAttendance.attendanceId

@@ -21,7 +21,7 @@ export default function AuthorizedPickupReports() {
   const getAuthorizedPickupsData = () => {
     axios
       .get(
-        `http://localhost:8091/api/children/authorizedpickupsreport/${status}`
+        `https://csdemoproject.info/SchoolProject/api/children/authorizedpickupsreport/${status}`
       )
       .then((response) => {
         if (response.data) {

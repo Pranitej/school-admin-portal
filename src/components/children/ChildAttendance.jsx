@@ -14,7 +14,7 @@ export default function ChildAttendance({ currentChild }) {
   const getAttendanceRecordsByDate = () => {
     axios
       .get(
-        `http://localhost:8091/api/child-attendance/getChildAttendanceBetweenDates/${currentChild.id}/${startDate}/${endDate}`
+        `https://csdemoproject.info/SchoolProject/api/child-attendance/getChildAttendanceBetweenDates/${currentChild.id}/${startDate}/${endDate}`
       )
       .then((response) => {
         if (response.data) {
@@ -28,7 +28,7 @@ export default function ChildAttendance({ currentChild }) {
 
   const getAllRooms = () => {
     axios
-      .get(`http://localhost:8091/api/rooms/getAllRooms`)
+      .get(`https://csdemoproject.info/SchoolProject/api/rooms/getAllRooms`)
       .then((response) => {
         if (response.data) {
           setAllRooms(response.data);
@@ -50,7 +50,7 @@ export default function ChildAttendance({ currentChild }) {
   const handleDelete = (id) => {
     axios
       .delete(
-        `http://localhost:8091/api/child-attendance/deleteChildAttendance/${id}`
+        `https://csdemoproject.info/SchoolProject/api/child-attendance/deleteChildAttendance/${id}`
       )
       .then((response) => {
         if (response) {

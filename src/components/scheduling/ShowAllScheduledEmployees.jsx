@@ -7,7 +7,7 @@ export default function ShowAllScheduledEmployees({ roomId, date }) {
   const getScheduledChildren = () => {
     axios
       .get(
-        `http://localhost:8091/api/employee-schedules/getEmployeeRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
+        `https://csdemoproject.info/SchoolProject/api/employee-schedules/getEmployeeRoomSchedulesByRoomIdAndScheduleDate/${roomId}/${date}`
       )
       .then((response) => {
         if (response.data) {
@@ -64,7 +64,7 @@ export default function ShowAllScheduledEmployees({ roomId, date }) {
                           <div className="row align-items-center">
                             <div className="col-sm-2">
                               <img
-                                src={`http://localhost:8091/images/employees/${child.pic}`}
+                                src={`https://csdemoproject.info/SchoolProject/images/employees/${child.pic}`}
                                 alt="children"
                                 width={"50px"}
                                 onError={(e) => {

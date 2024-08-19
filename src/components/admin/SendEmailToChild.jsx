@@ -9,7 +9,7 @@ export default function SendEmailToChild({ familyObj }) {
 
   const handleSendEmail = () => {
     axios
-      .post(`http://localhost:8091/sendMail`, {
+      .post(`https://csdemoproject.info/SchoolProject/sendMail`, {
         toMail: emailId,
         subject,
         body: message,

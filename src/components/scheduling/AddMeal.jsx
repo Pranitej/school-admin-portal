@@ -10,7 +10,7 @@ export default function AddMeal() {
 
   const getAllMeals = () => {
     axios
-      .get(`http://localhost:8091/api/meals/getAllMeals`)
+      .get(`https://csdemoproject.info/SchoolProject/api/meals/getAllMeals`)
       .then((response) => {
         if (response.data) {
           setAllMeals(response.data);
@@ -23,7 +23,7 @@ export default function AddMeal() {
 
   const handleAddMeal = () => {
     axios
-      .post(`http://localhost:8091/api/meals`, {
+      .post(`https://csdemoproject.info/SchoolProject/api/meals`, {
         mealType: mealCategory,
         mealName,
         description: mealDescription,
@@ -43,7 +43,7 @@ export default function AddMeal() {
 
   const handleMealDelete = (id) => {
     axios
-      .delete(`http://localhost:8091/api/meals/${id}`)
+      .delete(`https://csdemoproject.info/SchoolProject/api/meals/${id}`)
       .then((response) => {
         if (response) {
           getAllMeals();

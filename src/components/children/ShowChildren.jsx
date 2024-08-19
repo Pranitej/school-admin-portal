@@ -7,7 +7,9 @@ export default function ShowChildren({ currentChild, setCurrentChild }) {
 
   const getAllChildren = () => {
     axios
-      .get(`http://localhost:8091/api/children/getAllChildren`)
+      .get(
+        `https://csdemoproject.info/SchoolProject/api/children/getAllChildren`
+      )
       .then((response) => {
         if (response.data) {
           setAllChildren(response.data);
